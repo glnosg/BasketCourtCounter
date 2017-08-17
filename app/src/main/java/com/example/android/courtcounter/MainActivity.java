@@ -5,11 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 
-    private int scoreCounter = 0;
+    private int scoreTeamA = 0;
+    private int scoreTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,23 +16,43 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void addOne(View view) {
-        scoreCounter++;
-        displayScore(scoreCounter);
+    public void addOneTeamA(View view) {
+        scoreTeamA++;
+        displayScoreTeamA(scoreTeamA);
     }
 
-    public void addTwo(View view) {
-        scoreCounter  += 2;
-        displayScore(scoreCounter);
+    public void addTwoTeamA(View view) {
+        scoreTeamA += 2;
+        displayScoreTeamA(scoreTeamA);
     }
 
-    public void addThree(View view) {
-        scoreCounter += 3;
-        displayScore(scoreCounter);
+    public void addThreeTeamA(View view) {
+        scoreTeamA += 3;
+        displayScoreTeamA(scoreTeamA);
     }
 
-    public void displayScore(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.score_view);
+    public void displayScoreTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.score_view_team_a);
+        scoreView.setText(Integer.toString(score));
+    }
+
+    public void addOneTeamB(View view) {
+        scoreTeamB++;
+        displayScoreTeamB(scoreTeamB);
+    }
+
+    public void addTwoTeamB(View view) {
+        scoreTeamB += 2;
+        displayScoreTeamB(scoreTeamB);
+    }
+
+    public void addThreeTeamB(View view) {
+        scoreTeamB += 3;
+        displayScoreTeamB(scoreTeamB);
+    }
+
+    public void displayScoreTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.score_view_team_b);
         scoreView.setText(Integer.toString(score));
     }
 }
